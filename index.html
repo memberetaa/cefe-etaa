@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🪙 فروش سکه کافه ایتا</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;font-family:Vazirmatn,sans-serif}
+body{margin:0;min-height:100vh;padding:20px;background:radial-gradient(circle at top,#3a2b08,transparent 35%),linear-gradient(145deg,#070707,#171717,#080808);color:#fff}
+.container{max-width:500px;margin:auto}
+header{text-align:center;padding:12px 0 22px}
+.coin{width:84px;height:84px;margin:auto;border-radius:50%;display:grid;place-items:center;font-size:44px;background:linear-gradient(145deg,#ffe27a,#b87900);box-shadow:0 0 35px #d9a92855}
+h1{font-size:25px;margin:16px 0 6px}.sub{color:#aaa;font-size:13px}
+.card{background:#ffffff0d;border:1px solid #ffd75a22;border-radius:22px;padding:20px;margin-bottom:16px;backdrop-filter:blur(14px);box-shadow:0 12px 35px #0005}
+.price-row{display:flex;justify-content:space-between;gap:12px;padding:15px;background:#ffffff08;border-radius:15px;margin:8px 0;font-size:13px}
+.gold{color:#ffd75a;font-weight:800}
+label{display:block;margin-bottom:9px;color:#ddd;font-size:14px}
+input{width:100%;padding:16px;border-radius:15px;border:1px solid #333;background:#101010;color:#fff;outline:0;font-size:19px;text-align:center;direction:ltr}
+input:focus{border-color:#d9a928;box-shadow:0 0 0 3px #d9a92818}
+.result{margin-top:15px;padding:17px;border-radius:16px;text-align:center;background:#ffd75a12}
+.small{color:#aaa;font-size:12px}.amount{font-size:28px;font-weight:800;color:#ffd75a;margin-top:4px}
+button{width:100%;border:0;border-radius:16px;padding:17px;margin-top:16px;font-size:17px;font-weight:800;cursor:pointer;background:linear-gradient(135deg,#ffe27a,#d99d18);color:#17120a}
+button:active{transform:scale(.98)}
+#steps{display:none}.step{background:#ffffff08;border-radius:16px;padding:16px;margin:10px 0;line-height:2;font-size:14px}
+.cardno{direction:ltr;text-align:center;letter-spacing:1px;color:#ffd75a;font-weight:800;font-size:17px;margin:8px 0;cursor:pointer;user-select:none}.copyhint{font-size:11px;color:#888;text-align:center;margin-top:4px}
+.support{direction:ltr;display:inline-block;color:#63b3ff;font-weight:800}
+.warning{color:#ffcc5c;font-size:12px;line-height:1.8;margin-top:12px}
+.back{background:#292929;color:#fff;box-shadow:none}
+footer{text-align:center;color:#666;font-size:11px;margin-top:25px}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="coin">🪙</div>
+<h1>فروش سکه کافه ایتا</h1>
+<div class="sub">محاسبه سریع و خودکار قیمت</div>
+</header>
+
+<section id="order">
+<div class="card">
+<div class="price-row"><span>۱,۰۰۰ تا ۱۰,۰۰۰ سکه</span><span class="gold">۱۰,۰۰۰ تومان / ۱۰۰۰</span></div>
+<div class="price-row"><span>بیشتر از ۱۰,۰۰۰ سکه</span><span class="gold">۸,۰۰۰ تومان / ۱۰۰۰</span></div>
+</div>
+
+<div class="card">
+<label for="coins">تعداد سکه</label>
+<input id="coins" type="number" min="1000" step="1000" placeholder="مثلاً 20000">
+<div class="result"><div class="small">مبلغ قابل پرداخت</div><div class="amount" id="amount">۰ تومان</div></div>
+<button id="submit">ثبت سفارش</button>
+</div>
+</section>
+
+<section id="steps">
+<div class="card">
+<h2 style="margin-top:0">📋 مراحل تکمیل سفارش</h2>
+<div class="step">
+<strong class="gold">۱. پرداخت مبلغ سفارش</strong><br>
+ابتدا مبلغ سفارش را به شماره کارت زیر واریز کنید:
+<div class="cardno" id="cardNumber" title="برای کپی لمس کنید">6219 8613 5149 4470</div><div class="copyhint" id="copyHint">برای کپی، روی شماره کارت بزنید</div>
+👤 به نام: <strong>مظفری</strong>
+</div>
+<div class="step">
+<strong class="gold">۲. ارسال اطلاعات</strong><br>
+سپس شماره ایتای خود را به همراه تصویر رسید پرداخت برای پشتیبانی ارسال کنید:
+<br><br>📩 <a class="support" href="https://eitaa.com/ALI_PERSHIAN" target="_blank" rel="noopener">@ALI_PERSHIAN</a>
+</div>
+<div class="step">
+🪙 تعداد سکه: <strong class="gold" id="finalCoins"></strong><br>
+💰 مبلغ: <strong class="gold" id="finalAmount"></strong>
+</div>
+<div class="warning">⚠️ لطفاً قبل از ارسال، مبلغ و اطلاعات سفارش را بررسی کنید.</div>
+<button class="back" id="back">← برگشت و ویرایش سفارش</button>
+</div>
+</section>
+<footer>🪙 فروش سکه کافه ایتا</footer>
+</div>
+
+<script>
+const coins=document.getElementById('coins');
+const amount=document.getElementById('amount');
+const fa=n=>Number(n).toLocaleString('fa-IR');
+function calc(){
+ const n=Number(coins.value);
+ if(!n||n<=0){amount.textContent='۰ تومان';return 0}
+ const p=(n<=10000?n/1000*10000:n/1000*8000);
+ amount.textContent=fa(p)+' تومان';
+ return p;
+}
+coins.addEventListener('input',calc);
+document.getElementById('submit').onclick=()=>{
+ const n=Number(coins.value);
+ if(!n||n<1000)return alert('لطفاً حداقل ۱۰۰۰ سکه وارد کنید.');
+ if(n%1000!==0)return alert('تعداد سکه باید مضربی از ۱۰۰۰ باشد.');
+ const p=calc();
+ document.getElementById('finalCoins').textContent=fa(n)+' سکه';
+ document.getElementById('finalAmount').textContent=fa(p)+' تومان';
+ document.getElementById('order').style.display='none';
+ document.getElementById('steps').style.display='block';
+ scrollTo({top:0,behavior:'smooth'});
+};
+document.getElementById('cardNumber').onclick=async()=>{
+ try{
+   await navigator.clipboard.writeText('6219861351494470');
+   document.getElementById('copyHint').textContent='✅ شماره کارت کپی شد';
+   setTimeout(()=>document.getElementById('copyHint').textContent='برای کپی، روی شماره کارت بزنید',1800);
+ }catch(e){
+   alert('شماره کارت: 6219 8613 5149 4470');
+ }
+};
+document.getElementById('back').onclick=()=>{
+ document.getElementById('steps').style.display='none';
+ document.getElementById('order').style.display='block';
+ scrollTo({top:0,behavior:'smooth'});
+};
+</script>
+</body>
+</html>
